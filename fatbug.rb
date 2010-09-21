@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby 
-
-
-
+=begin
+fatbug.rb
+  2010/09/20 20:07
+  (r) Rogelio Zarate
+      eco-systems
+      
+  Creates and saves files of the specified size
+  Useful
+   to create dummy load files
+=end
 
 thesize = 0.200
 print 'You ordered a ' + thesize.to_s + ' MB file.'
