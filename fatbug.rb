@@ -10,18 +10,22 @@ fatbug.rb
   ? add UUID
 =end
 
-thesize = 0.200
-print 'You ordered a ' + thesize.to_s + ' MB file.'
+
+string = "abcdefghijklmnopqrstuvwxyz1234567890"
+file_size = ARGV[0].to_f
+file_name = "#{Time.now.strftime("%Y%m%d-%H%M%S")}-#{file_size}MB.dummy"
+
 
 # Generate the file
-string = "abcdefghijklmnopqrstuvwxyz1234567890"
-filesize = 0;
 
-f = File.new("#{Time.now.strftime("%Y%m%d-%H%M%S")}-#{thesize}MB.dummy", 'w')
+f = File.new(file_name, 'w')
+actual_size = 0
 
-while filesize < thesize * 1e6
+while actual_size < file_size* 1e6
   f.puts string
-  filesize += string.size
+  actual_size += string.size
 end
 
 f.close
+
+puts "Your file #{file_name} is served."
